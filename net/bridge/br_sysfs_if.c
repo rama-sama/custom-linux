@@ -181,8 +181,6 @@ static ssize_t show_group_fwd_mask(struct net_bridge_port *p, char *buf)
 static int store_group_fwd_mask(struct net_bridge_port *p,
 				unsigned long v)
 {
-	if (v & BR_GROUPFWD_MACPAUSE)
-		return -EINVAL;
 	p->group_fwd_mask = v;
 
 	return 0;
