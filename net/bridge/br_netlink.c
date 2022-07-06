@@ -868,8 +868,6 @@ static int br_setport(struct net_bridge_port *p, struct nlattr *tb[])
 	if (tb[IFLA_BRPORT_GROUP_FWD_MASK]) {
 		u16 fwd_mask = nla_get_u16(tb[IFLA_BRPORT_GROUP_FWD_MASK]);
 
-		if (fwd_mask & BR_GROUPFWD_MACPAUSE)
-			return -EINVAL;
 		p->group_fwd_mask = fwd_mask;
 	}
 
