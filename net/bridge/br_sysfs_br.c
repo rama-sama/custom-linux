@@ -147,9 +147,6 @@ static ssize_t group_fwd_mask_show(struct device *d,
 
 static int set_group_fwd_mask(struct net_bridge *br, unsigned long val)
 {
-	if (val & BR_GROUPFWD_RESTRICTED)
-		return -EINVAL;
-
 	br->group_fwd_mask = val;
 
 	return 0;
