@@ -1187,8 +1187,6 @@ static int br_changelink(struct net_device *brdev, struct nlattr *tb[],
 	if (data[IFLA_BR_GROUP_FWD_MASK]) {
 		u16 fwd_mask = nla_get_u16(data[IFLA_BR_GROUP_FWD_MASK]);
 
-		if (fwd_mask & BR_GROUPFWD_RESTRICTED)
-			return -EINVAL;
 		br->group_fwd_mask = fwd_mask;
 	}
 
